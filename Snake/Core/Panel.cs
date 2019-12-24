@@ -47,7 +47,7 @@ namespace Game.Core
             {
                 for (int x = 0; x < 30; x++)
                 {
-                    if (GetBoxColor(x, y) != Color.Blue)
+                    if (!(GetBoxColor(x, y) == Color.Blue || GetBoxColor(x, y) == Color.Green))
                     {
                         SetBoxColor(x, y, Color.Black);
                     }

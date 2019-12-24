@@ -38,6 +38,7 @@
             this.restartButton = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Label();
+            this.foodTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // gameTimer
@@ -147,6 +148,11 @@
             this.closeButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // foodTimer
+            // 
+            this.foodTimer.Interval = 5000;
+            this.foodTimer.Tick += new System.EventHandler(this.foodTimer_Tick);
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,5 +191,6 @@
         private System.Windows.Forms.Label restartButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label closeButton;
+        private System.Windows.Forms.Timer foodTimer;
     }
 }

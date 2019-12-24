@@ -16,7 +16,7 @@ namespace Game
             InitializeComponent();
             Panel = new Core.Panel(this);
             Snake = new Snake(this, Panel);
-            Food = new Food(Panel);
+            Food = new Food(Panel, this);
             Panel.AddSnake(Snake);
         }
 
@@ -46,6 +46,13 @@ namespace Game
 
             if (Snake.snakeHeadXPos == Food.foodXPos && Snake.snakeHeadYPos == Food.foodYPos)
             {
+                if (Food.foodColor == Color.Green)
+                {
+                    Snake.snakeLength += 2;
+                    foodTimer.Enabled = false;
+                    Food.foodColor = Color.Blue;
+                }
+
                 Snake.snakeLength += 1;
                 SnakeLengthLabel.Text = Snake.snakeLength.ToString();
                 Food.New();
@@ -61,6 +68,11 @@ namespace Game
             EndGameLabel.Visible = true;
             Snake.Reset();
             gameTimer.Stop();
+        }
+
+        public void EnableBonus()
+        {
+            foodTimer.Enabled = true;
         }
 
         private void EndGameLabel_Click(object sender, EventArgs e)
@@ -85,6 +97,13 @@ namespace Game
         private void closeButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void foodTimer_Tick(object sender, EventArgs e)
+        {
+            foodTimer.Enabled = false;
+            Food.foodColor = Color.Blue;
+            Panel.SetBoxColor(Food.foodXPos, Food.foodYPos, Food.foodColor);
         }
     }
 }
