@@ -39,9 +39,9 @@ namespace Game.Core
                 App.EnableBonus();
             }
 
-            for (int y = 0; y < 30; y++)
+            for (int y = 0; y < Panel.PanelCorY; y++)
             {
-                for (int x = 0; x < 30; x++)
+                for (int x = 0; x < Panel.PanelCorX; x++)
                 {
                     if (Panel.GetBoxColor(x, y) == Color.Blue || Panel.GetBoxColor(x, y) == Color.Green)
                     {
@@ -60,8 +60,8 @@ namespace Game.Core
                 foundBox = false;
                 while (foundBox == false)
                 {
-                    foodXPos = R.Next(0, 30);
-                    foodYPos = R.Next(0, 30);
+                    foodXPos = R.Next(0, Panel.PanelCorX);
+                    foodYPos = R.Next(0, Panel.PanelCorY);
 
                     if (Panel.GetBoxColor(foodXPos, foodYPos) == Color.Black)
                     {
@@ -70,8 +70,8 @@ namespace Game.Core
                     }
                     else
                     {
-                        foodXPos = R.Next(0, 30);
-                        foodYPos = R.Next(0, 30);
+                        foodXPos = R.Next(0, Panel.PanelCorX);
+                        foodYPos = R.Next(0, Panel.PanelCorY);
                     }
                 }
             }
@@ -84,8 +84,8 @@ namespace Game.Core
                 {
                     foundBox = false;
 
-                    foodXPos = R.Next(0, 30);
-                    foodYPos = R.Next(0, 30);
+                    foodXPos = R.Next(0, Panel.PanelCorX);
+                    foodYPos = R.Next(0, Panel.PanelCorY);
 
                     if (Panel.GetBoxColor(foodXPos, foodYPos) == Color.Black)
                     {
@@ -94,8 +94,8 @@ namespace Game.Core
                     }
                     else
                     {
-                        foodXPos = R.Next(0, 30);
-                        foodYPos = R.Next(0, 30);
+                        foodXPos = R.Next(0, Panel.PanelCorX);
+                        foodYPos = R.Next(0, Panel.PanelCorY);
                     }
                 }
 

@@ -7,6 +7,7 @@ namespace Game
 {
     public partial class main : Form
     {
+
         Snake Snake;
         Core.Panel Panel;
         Food Food;
