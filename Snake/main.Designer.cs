@@ -2,6 +2,7 @@
 {
     partial class main
     {
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -21,6 +22,9 @@
         }
 
         #region Windows Form Designer generated code
+
+        // BoardSize + 4 to the borders
+        public const int BoardSize = 504;
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -44,6 +48,7 @@
             // gameTimer
             // 
             this.gameTimer.Enabled = true;
+            this.gameTimer.Interval = 100;
             this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
             // 
             // EndGameLabel
@@ -65,9 +70,9 @@
             // 
             this.Board.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.Board.ForeColor = System.Drawing.Color.Red;
-            this.Board.Location = new System.Drawing.Point(34, 112);
+            this.Board.Location = new System.Drawing.Point(27, 105);
             this.Board.Name = "Board";
-            this.Board.Size = new System.Drawing.Size(485, 485);
+            this.Board.Size = new System.Drawing.Size(BoardSize, BoardSize);
             this.Board.TabIndex = 3;
             // 
             // label1
@@ -75,7 +80,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(187)))), ((int)(((byte)(190)))));
-            this.label1.Location = new System.Drawing.Point(32, 72);
+            this.label1.Location = new System.Drawing.Point(25, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 23);
             this.label1.TabIndex = 15;
@@ -87,7 +92,7 @@
             this.SnakeLengthLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SnakeLengthLabel.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SnakeLengthLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(187)))), ((int)(((byte)(190)))));
-            this.SnakeLengthLabel.Location = new System.Drawing.Point(153, 67);
+            this.SnakeLengthLabel.Location = new System.Drawing.Point(153, 61);
             this.SnakeLengthLabel.Name = "SnakeLengthLabel";
             this.SnakeLengthLabel.Size = new System.Drawing.Size(59, 35);
             this.SnakeLengthLabel.TabIndex = 14;
@@ -100,7 +105,7 @@
             this.resetBg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resetBg.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetBg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(187)))), ((int)(((byte)(190)))));
-            this.resetBg.Location = new System.Drawing.Point(366, 65);
+            this.resetBg.Location = new System.Drawing.Point(374, 54);
             this.resetBg.Name = "resetBg";
             this.resetBg.Size = new System.Drawing.Size(151, 39);
             this.resetBg.TabIndex = 30;
@@ -113,7 +118,7 @@
             this.restartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.restartButton.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.restartButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(187)))), ((int)(((byte)(190)))));
-            this.restartButton.Location = new System.Drawing.Point(367, 66);
+            this.restartButton.Location = new System.Drawing.Point(375, 55);
             this.restartButton.Name = "restartButton";
             this.restartButton.Size = new System.Drawing.Size(149, 37);
             this.restartButton.TabIndex = 31;
@@ -192,5 +197,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label closeButton;
         private System.Windows.Forms.Timer foodTimer;
+
     }
 }

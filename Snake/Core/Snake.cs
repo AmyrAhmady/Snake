@@ -22,10 +22,10 @@ namespace Game.Core
             Panel = panel;
             snakeHeadXPositions = new int[100];
             snakeHeadYPositions = new int[100];
-            snakeHeadXPos = 15;
-            snakeHeadYPos = 15;
-            snakeHeadXPositions[1] = 15;
-            snakeHeadYPositions[1] = 15;
+            snakeHeadXPos = Panel.CenterPoint;
+            snakeHeadYPos = Panel.CenterPoint;
+            snakeHeadXPositions[1] = Panel.CenterPoint;
+            snakeHeadYPositions[1] = Panel.CenterPoint;
         }
 
         public void Reset()
@@ -37,12 +37,12 @@ namespace Game.Core
             }
 
             snakeLength = 1;
-            snakeHeadXPos = 15;
-            snakeHeadYPos = 15;
+            snakeHeadXPos = Panel.CenterPoint;
+            snakeHeadYPos = Panel.CenterPoint;
             direction = "left";
             changeToDirection = "left";
-            snakeHeadXPositions[1] = 15;
-            snakeHeadYPositions[1] = 15;
+            snakeHeadXPositions[1] = Panel.CenterPoint;
+            snakeHeadYPositions[1] = Panel.CenterPoint;
         }
 
         public void ProcessDirection(Keys keyData)
@@ -66,7 +66,7 @@ namespace Game.Core
 
         public void boundaryCheck()
         {
-            if (snakeHeadXPos < 0 || snakeHeadXPos > 29 || snakeHeadYPos < 0 || snakeHeadYPos > 29)
+            if (snakeHeadXPos < 0 || snakeHeadXPos >= Panel.PanelSize || snakeHeadYPos < 0 || snakeHeadYPos >= Panel.PanelSize)
                 Game.EndGame();
         }
 
